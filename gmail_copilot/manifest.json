@@ -10,6 +10,9 @@
     "128": "images/icons/icon128.png"
     },
     "action": {
-      "default_popup": "index.html"
-    }
+      "default_popup": "source/index.html"
+    },
+    "permissions": [
+      "activeTab"
+    ]
   }
