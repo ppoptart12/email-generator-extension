@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from OpenAI_script import extensionEmailGenerator
 
 from fastapi.openapi.docs import (
     get_redoc_html,
@@ -61,9 +62,13 @@ def route_health(request: Request):
     return JSONResponse(content=res, status_code=200)
 
 
-@app.post("/check_access_request_status/")
-async def manage_request(prompt: str):
-    if prompt:
-        return JSONResponse(content=prompt, status_code=200)
+@app.post("/generate_email/")
+async def manage_request(user_prompt: str):
+    email_agent = extensionEmailGenerator()
+
+    email = email_agent.generate_email(message=user_prompt)
+
+    if email:
+        return JSONResponse(content=email, status_code=200)
     else:
         return {"error": "Invalid request parameters"}
