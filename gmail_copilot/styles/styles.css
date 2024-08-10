@@ -1,3 +1,36 @@
+body{
+    background-color:rgb(211, 231, 233); 
+    text-align:left;
+    height: 500px; /* Adjust this value as needed */
+    width: 350px;  /* Adjust this value as needed */
+}
+
+.runButton{
+    background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    color: black;
+    border: 2px solid #000000;
+    text-align: center;
+    transition-duration: 0.3s;
+}
+
+.runButton:hover{
+    background-color: rgb(206, 129, 40);
+    color: rgb(255, 255, 255);
+}
+
+.copyButton{
+    position: absolute; 
+    bottom: 2px; 
+    right: 5px; 
+    border: none; 
+    padding: 0; 
+    cursor: pointer; 
+    background-color: 
+    transparent;
+}
+
 /* Initial state: button is partially transparent */
 #CopyButton {
     opacity: 0.3; /* Set initial opacity */
@@ -7,4 +40,73 @@
 /* Hover state: button becomes fully visible */
 #CopyButton:hover {
     opacity: 1; /* Full opacity on hover */
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 10px;
+    padding: 0px 0px 25px 20px ;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.prompt {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.header {
+    border-radius: 10px; 
+    margin: 5px;
+    padding: 2px;
+}
+
+.header .image {
+    background: url("../images/icons/Logoicon.png") no-repeat;
+    width: 27px;
+    height: 27px;
+}
+
+.header .text {
+    font: x-large sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    text-align:right;
+}
+
+.header .image, 
+.header .text {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.inputBox {
+    height: 80px;
+    width: 330px;
+    border: 3px solid rgb(0, 0, 0);
+    padding: 4px;
+}
+
+.outputBox{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0;
+}
+
+.outputTextBox{
+    text-align: left; 
+    margin: 0; 
+    padding-right: 15px;
+    font-size: 12px;
+    overflow-y: auto;
+    max-height: 170px;
 }

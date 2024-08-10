@@ -14,7 +14,6 @@ document.getElementById('runButton').addEventListener('click', () => {
         data = data.replace(/\n/g, "<br>");
         data = data.replace(/\n\n/g, "<br>");
         data = data.replaceAll("^\"|\"$", "");
-        alert("WORKE")
 
         document.getElementById('output').innerHTML = data;
     })
