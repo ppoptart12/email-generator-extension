@@ -6,13 +6,21 @@
         body { font-family: Arial, sans-serif; }
         #inputBox { width: 200px; }
     </style>
+    <link rel="stylesheet" href="../styles/styles.css"> <!-- Link to the CSS file -->
+
 </head>
 <body style="background-color:powderblue; text-align:center;">
     <h1>Gmail Copilot</h1>
     <input type="text" id="inputBox" placeholder="Enter text">
     <br><br>
     <button id="runButton">Run Script</button>
-    <pre id="output"></pre>
+</body>
+<body style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <div style="position: relative; width: fit-content; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+        <p id="output" style="text-align: left; margin: 0; padding-right: 50px;"></p>
+        <button id="CopyButton" style="position: absolute; bottom: 5px; right: 5px; border: none; padding: 0; cursor: pointer; background-color: transparent;">
+            <img id = "ButtonImage"src="../images/CopyText.png" height="15" width="15" style="display: block;">
+        </button>
+    </div>
     <script src="popup.js"></script>
 </body>
-</html>

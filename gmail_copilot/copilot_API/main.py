@@ -2,12 +2,17 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from OpenAI_script import extensionEmailGenerator
-
+from pydantic import BaseModel
 from fastapi.openapi.docs import (
     get_redoc_html,
     get_swagger_ui_html,
     get_swagger_ui_oauth2_redirect_html,
 )
+
+
+class RequestSchema(BaseModel):
+    user_prompt: str
+
 
 app = FastAPI()
 
@@ -63,10 +68,10 @@ def route_health(request: Request):
 
 
 @app.post("/generate_email/")
-async def manage_request(user_prompt: str):
+async def manage_request(user_request: RequestSchema):
     email_agent = extensionEmailGenerator()
 
-    email = email_agent.generate_email(message=user_prompt)
+    email = email_agent.generate_email(message=user_request.user_prompt)
 
     if email:
         return JSONResponse(content=email, status_code=200)
