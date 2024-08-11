@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Gmail Copilot",
+    "description": "AI tool for helping users write and generate emails.",
+    "version": "1.0",
+    "icons": {
+    "16": "gmail_copilot/images/icons/icon16.png",
+    "32": "gmail_copilot/images/icons/icon32.png",
+    "48": "gmail_copilot/images/icons/icon48.png",
+    "128": "gmail_copilot/images/icons/icon128.png"
+    },
+    "action": {
+      "default_popup": "gmail_copilot/source/index.html",
+      "popup_height": 700,
+      "popup_width": 400     
+
+    },
+    "permissions": [
+      "activeTab",
+      "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/"
+    ]
+  }
