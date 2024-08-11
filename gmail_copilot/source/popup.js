@@ -1,7 +1,9 @@
+const apiUrl = "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/";
+
 document.getElementById('runButton').addEventListener('click', () => {
     const userInput = document.getElementById('inputBox').value;
 
-    fetch('http://127.0.0.1:8000/generate_email/', {
+    fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -24,7 +26,9 @@ document.getElementById('runButton').addEventListener('click', () => {
 });
 
 function copyText() {
-    var textToCopy = document.getElementById("output").innerHTML;
+    var textToCopy = document.getElementById("output").innerHTML.replace(/<br\s*\/?>/gi, '\n');
+    
+
     var buttonImg = document.getElementById("ButtonImage");
     buttonImg.src = "../images/CheckMark.png"; // Change to the green checkmark image
 
