@@ -24,13 +24,11 @@
     transparent;
 }
 
-/* Initial state: button is partially transparent */
 #CopyButton {
-    opacity: 0.3; /* Set initial opacity */
-    transition: opacity 0.3s ease-in-out; /* Transition effect */
+    opacity: 0.3; 
+    transition: opacity 0.3s ease-in-out; 
 }
 
-/* Hover state: button becomes fully visible */
 #CopyButton:hover {
-    opacity: 1; /* Full opacity on hover */
+    opacity: 1; 
 }
