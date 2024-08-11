@@ -30,13 +30,12 @@ function copyText() {
     
 
     var buttonImg = document.getElementById("ButtonImage");
-    buttonImg.src = "../images/CheckMark.png"; // Change to the green checkmark image
+    buttonImg.src = "../images/CheckMark.png"; 
 
     setTimeout(function() {
             buttonImg.src = "../images/CopyText.png";
         }, 1000);
             
-    // Use the modern Clipboard API to copy text to the clipboard
     navigator.clipboard.writeText(textToCopy)
 }
 

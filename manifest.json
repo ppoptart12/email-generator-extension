@@ -16,6 +16,7 @@
 
     },
     "permissions": [
-      "activeTab"
+      "activeTab",
+      "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/"
     ]
   }
