@@ -1,45 +1,9 @@
 body{
     background-color:rgb(211, 231, 233); 
     text-align:left;
-    height: 500px; /* Adjust this value as needed */
-    width: 350px;  /* Adjust this value as needed */
-}
-
-.runButton{
-    background-color: rgb(255, 255, 255);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 15px;
-    color: black;
-    border: 2px solid #000000;
-    text-align: center;
-    transition-duration: 0.3s;
-}
-
-.runButton:hover{
-    background-color: rgb(206, 129, 40);
-    color: rgb(255, 255, 255);
-}
-
-.copyButton{
-    position: absolute; 
-    bottom: 2px; 
-    right: 5px; 
-    border: none; 
-    padding: 0; 
-    cursor: pointer; 
-    background-color: 
-    transparent;
-}
-
-/* Initial state: button is partially transparent */
-#CopyButton {
-    opacity: 0.3; /* Set initial opacity */
-    transition: opacity 0.3s ease-in-out; /* Transition effect */
-}
-
-/* Hover state: button becomes fully visible */
-#CopyButton:hover {
-    opacity: 1; /* Full opacity on hover */
+    height: 500px; /*Max: 600 */ 
+    width: 350px;  /*Max: 800 */
+    /*Height and width of the extension page */
 }
 
 .footer {
