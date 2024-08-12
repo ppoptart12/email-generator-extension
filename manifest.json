@@ -9,14 +9,27 @@
     "48": "gmail_copilot/images/icons/icon48.png",
     "128": "gmail_copilot/images/icons/icon128.png"
     },
+    "host_permissions": [
+      "https://email-generator-api-18639de3ae0d.herokuapp.com/*"
+    ],
+    "permissions": [
+      "activeTab",
+      "tabs"
+    ],
     "action": {
-      "default_popup": "gmail_copilot/source/index.html",
+      "default_popup": "gmail_copilot/source/popup.html",
       "popup_height": 700,
       "popup_width": 400     
 
     },
-    "permissions": [
-      "activeTab",
-      "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/"
+    "background": {
+      "service_worker": "gmail_copilot/scripts/background.js",
+      "type": "module"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://mail.google.com/*"],
+        "js": ["gmail_copilot/scripts/content.js"]
+      }
     ]
   }
