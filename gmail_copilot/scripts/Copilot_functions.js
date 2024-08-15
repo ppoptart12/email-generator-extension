@@ -2,7 +2,6 @@ const apiUrl = "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_
 
 document.getElementById('runButton').addEventListener('click', () => {
     const userInput = document.getElementById('inputBox').value;
-
     fetch(apiUrl, {
         method: 'POST',
         headers: {
@@ -10,20 +9,39 @@ document.getElementById('runButton').addEventListener('click', () => {
         },
         body: JSON.stringify({ user_prompt: userInput })
     })
-
+    
     .then(response => response.json())
     .then(data => {
-        data = data.replace(/\n/g, "<br>");
-        data = data.replace(/\n\n/g, "<br>");
-        data = data.replaceAll("^\"|\"$", "");
+        final_body = data.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
 
-        document.getElementById('output').innerHTML = data;
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            // Check if the content script has already been injected
+            chrome.scripting.executeScript({
+                target: { tabId: tabs[0].id },
+                function: injectIfNotExists,
+                args: [final_body]  
+            });
+        });
+        document.getElementById('output').innerHTML = final_body;
     })
     .catch(error => {
         console.error('Error:', error);
         document.getElementById('output').textContent = 'Error: ' + error;
     });
 });
+
+function injectIfNotExists(finalBody) {
+    if (!window.hasInjectedCopilotScript) {
+        chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+            if (request.action === "composeEmail") {
+                startComposeEmail(request.text);
+            }
+        });
+        window.hasInjectedCopilotScript = true;
+    }
+
+    startComposeEmail(finalBody);
+}
 
 function copyText() {
     var textToCopy = document.getElementById("output").innerHTML.replace(/<br\s*\/?>/gi, '\n');
