@@ -19,7 +19,7 @@ document.getElementById('runButton').addEventListener('click', () => {
             chrome.scripting.executeScript({
                 target: { tabId: tabs[0].id },
                 function: injectIfNotExists,
-                args: [final_body]  // Pass the email body directly to avoid additional messaging
+                args: [final_body]  
             });
         });
         document.getElementById('output').innerHTML = final_body;
