@@ -1,6 +1,8 @@
 const apiUrl = "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/";
 
+
 document.getElementById('runButton').addEventListener('click', () => {
+    document.getElementById('spinner').style.display = 'inline-block';
     const userInput = document.getElementById('inputBox').value;
     fetch(apiUrl, {
         method: 'POST',
@@ -25,6 +27,7 @@ document.getElementById('runButton').addEventListener('click', () => {
         });
         document.getElementById('SubjectOutput').innerHTML = final_email_subject;
         document.getElementById('BodyOutput').innerHTML = final_email_body;
+        document.getElementById('spinner').style.display = 'none';
     })
     .catch(error => {
         console.error('Error:', error);
