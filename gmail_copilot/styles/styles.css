@@ -59,20 +59,30 @@ body{
     padding: 4px;
 }
 
+
 .outputBox{
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    margin: 0;
+    margin: 3;
 }
 
-.outputTextBox{
+.SubjectOutputBox{
     text-align: left; 
     margin: 0; 
     padding-right: 15px;
     font-size: 12px;
     overflow-y: auto;
     max-height: 170px;
+}
+
+.OutputTextBox{
+    text-align: left; 
+    margin: 0; 
+    padding-right: 15px;
+    font-size: 12px;
+    overflow-y: auto;
+    max-height: 130px;
 }
 
 .notGmailTab{
