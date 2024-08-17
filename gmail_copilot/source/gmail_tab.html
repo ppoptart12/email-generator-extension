@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/button_styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <div class="header">
@@ -13,7 +14,10 @@
     <p class = "prompt">Whats on your mind? </p> 
     <textarea  type="text" id = "inputBox" class="inputBox"></textarea>
     <br><br>
-    <button class= "runButton" id="runButton">Generate Email</button>
+    <button class= "runButton" id="runButton">
+        <i class="fa fa-spinner fa-spin" id="spinner" style="display: none;"></i>
+        Generate Email
+    </button>
 </div>
 <br><hr>
 <div class="outputBox">
