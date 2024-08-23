@@ -17,10 +17,15 @@
       "activeTab",
       "tabs",
       "scripting",
-      "declarativeContent"  
+      "declarativeContent",
+      "sidePanel"
     ],
     "action": {
-      "default_popup": "gmail_copilot/source/popup.html"
+      "default_title": "Click to open panel"
+    },
+    "side_panel": {
+      "default_path": "gmail_copilot/source/popup.html",
+      "openPanelOnActionClick": true
     },
     "background": {
       "service_worker": "gmail_copilot/scripts/background.js",
