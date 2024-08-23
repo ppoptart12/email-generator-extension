@@ -16,7 +16,6 @@ document.getElementById('runButton').addEventListener('click', () => {
     .then(data => {
         final_email_subject = data.email_subject.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
         final_email_body = data.email_body.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
-
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             // Check if the content script has already been injected
             chrome.scripting.executeScript({

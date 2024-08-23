@@ -35,11 +35,11 @@ function startComposeEmail(subjectText, bodyText) {
                     } else {
                         console.log("Email body not found!");
                     }
-                }, 150); // Small delay before inserting the body text
+                }, 100); // Small delay before inserting the body text
             } else {
                 console.log("No draft found!");
             }
-        }, 200); // Slightly longer delay to ensure the compose window is ready
+        }, 110); // Slightly longer delay to ensure the compose window is ready
     } else {
         console.log("Compose button not found!");
     }
