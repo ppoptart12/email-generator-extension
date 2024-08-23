@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/button_styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="header">
+    <div class="image"></div><div class="text">&nbsp;Gmail Copilot</div>
+</div>
+<hr>
+<div>
+    <p class="prompt" id="UserGreeting">PlaceHolder</p> 
+    <script src="../scripts/word_selection.js"></script>
+    <textarea type="text" id="inputBox" class="inputBox"></textarea>
+    <br><br>
+    <button class= "runButton" id="runButton">
+        <i class="fa fa-spinner fa-spin" id="spinner" style="display: none;"></i>
+        Generate Email
+    </button>
+</div>
+<br><hr>
+<div class="outputBox">
+    <div style="position: relative; width: fit-content; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+        <p id="SubjectOutput" class= "SubjectOutputBox">Generated email subjects will appear here</p>
+        <button id="CopyButton1" class = "copyButton">
+            <img id = "ButtonImage1"src="../images/CopyText.png" height="15" width="15" style="display: block;">
+        </button>
+    </div>
+    <script src="../scripts/Copilot_functions.js"></script>
+</div>
+<hr>
+<div class="outputBox">
+    <div style="position: relative; width: fit-content; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
+        <p id="BodyOutput" class= "OutputTextBox">Generated emails will appear here</p>
+        <button id="CopyButton2" class = "copyButton">
+            <img id = "ButtonImage2"src="../images/CopyText.png" height="15" width="15" style="display: block;">
+        </button>
+    </div>
+    <script src="../scripts/Copilot_functions.js"></script>
+</div>
+<br>
+<div class="footer">
+        <p>@2024 Kanurra. All rights reserved</p>
+</div>
+</body>
+</html>
