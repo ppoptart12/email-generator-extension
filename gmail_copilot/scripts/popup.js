@@ -7,6 +7,7 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         .then(data => {
           contentDiv.innerHTML = data;
           executeScript('gmail_copilot/scripts/Copilot_functions.js');
+          executeScript('gmail_copilot/scripts/word_selection.js');
         });
     } else {
       fetch(chrome.runtime.getURL('gmail_copilot/source/not_gmail_tab.html'))
