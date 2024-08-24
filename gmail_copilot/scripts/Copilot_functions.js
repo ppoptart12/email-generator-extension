@@ -1,6 +1,4 @@
 const apiUrl = "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/";
-var email_tone = document.getElementById('tone').innerText.slice(1)
-var email_length = document.getElementById('length').innerText.slice(1)
 
 document.getElementById('runButton').addEventListener('click', () => {
     document.getElementById('spinner').style.display = 'inline-block';
@@ -10,7 +8,9 @@ document.getElementById('runButton').addEventListener('click', () => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ user_prompt: userInput })
+        body: JSON.stringify({ user_prompt: userInput, 
+            email_length: document.getElementById('length').innerText.slice(2), 
+            email_tone: document.getElementById('tone').innerText.slice(2)})
     })    
     .then(response => response.json())
     .then(data => {
@@ -86,7 +86,6 @@ dropdowns.forEach(dropdown => {
     options.forEach(option => {
         option.addEventListener('click', () => {
             selected.innerText = option.innerText
-            alert(selected.innerText)
             select.classList.remove('select-clicked');
             caret.classList.remove('caret-rotate');
             menu.classList.remove('menu-open');
