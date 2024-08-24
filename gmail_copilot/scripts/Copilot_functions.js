@@ -1,5 +1,6 @@
 const apiUrl = "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/";
-
+var email_tone = document.getElementById('tone').innerText.slice(1)
+var email_length = document.getElementById('length').innerText.slice(1)
 
 document.getElementById('runButton').addEventListener('click', () => {
     document.getElementById('spinner').style.display = 'inline-block';
@@ -10,8 +11,7 @@ document.getElementById('runButton').addEventListener('click', () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({ user_prompt: userInput })
-    })
-    
+    })    
     .then(response => response.json())
     .then(data => {
         final_email_subject = data.email_subject.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
@@ -67,4 +67,34 @@ document.getElementById('CopyButton1').addEventListener('click', () => {
 // Second copy button
 document.getElementById('CopyButton2').addEventListener('click', () => {
     copyText('BodyOutput', 'ButtonImage2');
+});
+
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const select = dropdown.querySelector('.select');
+    const caret = dropdown.querySelector('.caret');
+    const menu = dropdown.querySelector('.menu');
+    const options = dropdown.querySelectorAll('.menu li');
+    const selected = dropdown.querySelector('.selected');
+    select.addEventListener('click', () =>{
+        select.classList.toggle('select-clicked');
+        caret.classList.toggle('caret-rotate');
+        menu.classList.toggle('menu-open');
+    });
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            selected.innerText = option.innerText
+            alert(selected.innerText)
+            select.classList.remove('select-clicked');
+            caret.classList.remove('caret-rotate');
+            menu.classList.remove('menu-open');
+            
+            options.forEach(option => {
+                option.classList.remove('active');
+            });
+            option.classList.add('active');
+        });
+    });
 });

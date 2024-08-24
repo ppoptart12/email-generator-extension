@@ -1,7 +1,22 @@
-body{
-    background-color:rgb(211, 231, 233); 
-    text-align:left;
+html, body {
+    height: 100%;
+    margin: 0;
+    margin-left: 2px;
+    overflow: hidden;
 }
+body {
+    text-align:left;
+    background-image: linear-gradient(white, rgb(194, 230, 233));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.shadowBreak{
+    color: rgb(0, 0, 0);
+    height: 7px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #333 inset;
+  }
 
 .prompt {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -11,12 +26,18 @@ body{
 
 .inputBox {
     font-family:Arial, Helvetica, sans-serif;
+    border-radius: 20px;
     padding: 10px;
     height: 180px;
-    width: 97%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     border: 3px solid rgb(0, 0, 0);
+}
+
+.buttons {
+    position: relative;
+    margin-top: -10px;
 }
 
 .outputBox{

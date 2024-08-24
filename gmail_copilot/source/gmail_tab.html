@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html >
+<html>
+<meta charset="UTF-8">
 <head>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/button_styles.css"> 
@@ -9,7 +10,7 @@
 <div class="header">
     <div class="image"></div><div class="text">&nbsp;Gmail Copilot</div>
 </div>
-<hr>
+<hr class="shadowBreak">
 <div>
     <p class="prompt" id="UserGreeting">PlaceHolder</p> 
     <script src="../scripts/word_selection.js"></script>
@@ -24,10 +25,39 @@
     - Propose a 10% loyalty discount to Emily for her continued partnership."
     ></textarea>
     <br><br>
+</div>
+<div class = "buttons">
     <button class= "runButton" id="runButton">
         <i class="fa fa-spinner fa-spin" id="spinner" style="display: none;"></i>
-        Generate Email
+        Write Email
     </button>
+    <div class="dropdown" >
+        <div class="select">
+            <span class="selected" id="tone">&#129309 Professional friendly</span>
+            <div class="caret"></div>
+        </div>
+    <ul class="menu">
+        <li>&#129333 Formal</li>
+        <li>&#128188 Professional</li>
+        <li class="active">&#129309 Professional friendly</li>
+        <li>&#128516 Casual</li>
+        <li>&#128680 Urgent</li>
+        <li>&#128079 appreciative</li>
+        <li>&#128514 Funny</li>
+    </ul>
+    </div>
+    <div class="dropdown">
+        <div class="select">
+            <span class="selected" id="length">&#128196 Short</span>
+            <div class="caret"></div>
+        </div>
+    <ul class="menu">
+        <li>&#128220 Extra Short</li>
+        <li class="active">&#128196 Short</li>
+        <li>&#128213 Medium</li>
+        <li>&#128211 Long</li>
+    </ul>
+    </div>
 </div>
 <br><hr>
 <div class="outputBox">
