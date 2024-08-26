@@ -1,7 +1,8 @@
 html, body {
-    height: 100%;
     margin: 0;
     margin-left: 2px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
 }
 body {
@@ -11,33 +12,75 @@ body {
     background-attachment: fixed;
 }
 
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0px;
+}
+
+.inputContainer{
+    flex-grow: 0.7;
+    display: flex;
+    flex-direction: column;
+}
+
 .shadowBreak{
     color: rgb(0, 0, 0);
-    height: 7px;
+    height: 5px;
     border: 0;
     box-shadow: 0 10px 10px -10px #333 inset;
+    margin: 20px 0; /* Optional: Add margin to give some spacing */
   }
 
 .prompt {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: normal;
     font-size: 20px;
+    margin-top: -4px;
 }
 
 .inputBox {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     border-radius: 20px;
     padding: 10px;
-    height: 180px;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 3px solid rgb(0, 0, 0);
+    margin-right: 7px;
+    border: 2px solid rgb(0, 0, 0);
+    flex-grow: 1;
+    resize: none; /* Prevent manual resizing */
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.buttonsContainer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    background-color: #f1f1f1;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdowns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0px; /* Space between dropdowns and the button */
+    width: 100%;
+    max-width: 600px;
 }
 
 .buttons {
-    position: relative;
-    margin-top: -10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Add space between dropdowns and button */
 }
 
 .outputBox{
@@ -89,8 +132,10 @@ body {
 
 .header {
     border-radius: 10px; 
-    margin: 5px;
+    margin: 2px;
+    margin-bottom: -4px;
     padding: 2px;
+    padding-top: 10px;
 }
 
 .header .image {
@@ -112,17 +157,3 @@ body {
     vertical-align: bottom;
 }
 
-.footer {
-    background-color: black;
-    color: white;
-    width: 100%;
-    height: 10px;
-    padding: 0px 0px 25px 20px ;
-    text-align: left;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}

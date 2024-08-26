@@ -1,14 +1,44 @@
 const apiUrl = "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/";
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach(dropdown => {
+    const select = dropdown.querySelector('.select');
+    const caret = dropdown.querySelector('.caret');
+    const menu = dropdown.querySelector('.menu');
+    const options = dropdown.querySelectorAll('.menu li');
+    const selected = dropdown.querySelector('.selected');
+    select.addEventListener('click', () =>{
+        select.classList.toggle('select-clicked');
+        caret.classList.toggle('caret-rotate');
+        menu.classList.toggle('menu-open');
+    });
+
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            selected.innerText = option.innerText
+            select.classList.remove('select-clicked');
+            caret.classList.remove('caret-rotate');
+            menu.classList.remove('menu-open');
+            
+            options.forEach(option => {
+                option.classList.remove('active');
+            });
+            option.classList.add('active');
+        });
+    });
+});
 
 document.getElementById('runButton').addEventListener('click', () => {
-    document.getElementById('spinner').style.display = 'inline-block';
     const userInput = document.getElementById('inputBox').value;
+    document.getElementById('loadingScreen').classList.remove('hidden');
+
     fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ user_prompt: userInput, 
+        body: JSON.stringify({ 
+            user_prompt: userInput, 
             email_length: document.getElementById('length').innerText.slice(2), 
             email_tone: document.getElementById('tone').innerText.slice(2)})
     })    
@@ -16,6 +46,7 @@ document.getElementById('runButton').addEventListener('click', () => {
     .then(data => {
         final_email_subject = data.email_subject.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
         final_email_body = data.email_body.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
+
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             // Check if the content script has already been injected
             chrome.scripting.executeScript({
@@ -24,13 +55,18 @@ document.getElementById('runButton').addEventListener('click', () => {
                 args: [final_email_subject, final_email_body]  
             });
         });
-        document.getElementById('SubjectOutput').innerHTML = final_email_subject;
-        document.getElementById('BodyOutput').innerHTML = final_email_body;
-        document.getElementById('spinner').style.display = 'none';
+        localStorage.setItem('emailSubject', final_email_subject);
+        localStorage.setItem('emailBody', final_email_body);
+
+        window.location.href = "generated_email.html";
+
+        document.getElementById('loadingScreen').classList.add('hidden');
     })
     .catch(error => {
         console.error('Error:', error);
         document.getElementById('output').textContent = 'Error: ' + error;
+
+        document.getElementById('loadingScreen').classList.add('hidden');
     });
 });
 
@@ -69,31 +105,3 @@ document.getElementById('CopyButton2').addEventListener('click', () => {
     copyText('BodyOutput', 'ButtonImage2');
 });
 
-const dropdowns = document.querySelectorAll('.dropdown');
-
-dropdowns.forEach(dropdown => {
-    const select = dropdown.querySelector('.select');
-    const caret = dropdown.querySelector('.caret');
-    const menu = dropdown.querySelector('.menu');
-    const options = dropdown.querySelectorAll('.menu li');
-    const selected = dropdown.querySelector('.selected');
-    select.addEventListener('click', () =>{
-        select.classList.toggle('select-clicked');
-        caret.classList.toggle('caret-rotate');
-        menu.classList.toggle('menu-open');
-    });
-
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            selected.innerText = option.innerText
-            select.classList.remove('select-clicked');
-            caret.classList.remove('caret-rotate');
-            menu.classList.remove('menu-open');
-            
-            options.forEach(option => {
-                option.classList.remove('active');
-            });
-            option.classList.add('active');
-        });
-    });
-});

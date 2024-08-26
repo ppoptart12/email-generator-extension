@@ -4,84 +4,76 @@
 <head>
     <link rel="stylesheet" href="../styles/styles.css">
     <link rel="stylesheet" href="../styles/button_styles.css"> 
+    <link rel="stylesheet" href="../styles/loading_style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<div class="header">
-    <div class="image"></div><div class="text">&nbsp;Gmail Copilot</div>
-</div>
-<hr class="shadowBreak">
-<div>
-    <p class="prompt" id="UserGreeting">PlaceHolder</p> 
+<div class="content">
+    <div class="header">
+        <div class="image"></div><div class="text">&nbsp;Gmail Copilot</div>
+    </div>
+    <hr class="shadowBreak">
+    <p class="prompt" id="UserGreeting"></p> 
     <script src="../scripts/word_selection.js"></script>
-    <textarea type="text" id="inputBox" class="inputBox" placeholder="Instruct the AI to write your email.
+    <div class="inputContainer">
+        <textarea type="text" id="inputBox" class="inputBox" placeholder="Instruct the AI to write your email.
 
-    A few examples:
+        A few examples:
 
-    - Inform Sarah that I will be unavailable on Friday. She is a potential client.
+        - Inform Sarah that I will be unavailable on Friday. She is a potential client.
 
-    - Request feedback from Mark on the latest product design.
+        - Request feedback from Mark on the latest product design.
 
-    - Propose a 10% loyalty discount to Emily for her continued partnership."
-    ></textarea>
-    <br><br>
-</div>
-<div class = "buttons">
-    <button class= "runButton" id="runButton">
-        <i class="fa fa-spinner fa-spin" id="spinner" style="display: none;"></i>
-        Write Email
-    </button>
-    <div class="dropdown" >
-        <div class="select">
-            <span class="selected" id="tone">&#129309 Professional friendly</span>
-            <div class="caret"></div>
+        - Propose a 10% loyalty discount to Emily for her continued partnership."
+        ></textarea>
+    </div>
+    <div class="buttonsContainer">
+        <div class="buttons">
+            <div class="dropdowns"> 
+                <div class="dropdown" >
+                    <div class="select">
+                        <span class="selected" id="tone">&#129309 Professional friendly</span>
+                        <div class="caret"></div>
+                    </div>
+                <ul class="menu">
+                    <li>&#129333 Formal</li>
+                    <li>&#128188 Professional</li>
+                    <li class="active">&#129309 Professional friendly</li>
+                    <li>&#128516 Casual</li>
+                    <li>&#128680 Urgent</li>
+                    <li>&#128079 appreciative</li>
+                    <li>&#128514 Funny</li>
+                </ul>
+                </div>
+                <div class="dropdown">
+                    <div class="select">
+                        <span class="selected" id="length">&#128196 Short</span>
+                        <div class="caret"></div>
+                    </div>
+                <ul class="menu">
+                    <li>&#128220 Extra Short</li>
+                    <li class="active">&#128196 Short</li>
+                    <li>&#128213 Medium</li>
+                    <li>&#128211 Long</li>
+                </ul>
+                </div>
         </div>
-    <ul class="menu">
-        <li>&#129333 Formal</li>
-        <li>&#128188 Professional</li>
-        <li class="active">&#129309 Professional friendly</li>
-        <li>&#128516 Casual</li>
-        <li>&#128680 Urgent</li>
-        <li>&#128079 appreciative</li>
-        <li>&#128514 Funny</li>
-    </ul>
-    </div>
-    <div class="dropdown">
-        <div class="select">
-            <span class="selected" id="length">&#128196 Short</span>
-            <div class="caret"></div>
+            <button class= "runButton" id="runButton">
+                Write Email
+            </button>
+            <br>
+
         </div>
-    <ul class="menu">
-        <li>&#128220 Extra Short</li>
-        <li class="active">&#128196 Short</li>
-        <li>&#128213 Medium</li>
-        <li>&#128211 Long</li>
-    </ul>
+    </div>
+    <div id="loadingScreen" class="loadingScreen hidden">
+        <div class="overlay"></div>
+        <div class="buttonContainer">
+            <div class="dot dot--1"></div>
+            <div class="dot dot--2"></div>
+            <div class="dot dot--3"></div>
+        </div>
     </div>
 </div>
-<br><hr>
-<div class="outputBox">
-    <div style="position: relative; width: fit-content; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-        <p id="SubjectOutput" class= "SubjectOutputBox">Generated email subjects will appear here</p>
-        <button id="CopyButton1" class = "copyButton">
-            <img id = "ButtonImage1"src="../images/CopyText.png" height="15" width="15" style="display: block;">
-        </button>
-    </div>
-    <script src="../scripts/Copilot_functions.js"></script>
-</div>
-<hr>
-<div class="outputBox">
-    <div style="position: relative; width: fit-content; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-        <p id="BodyOutput" class= "OutputTextBox">Generated emails will appear here</p>
-        <button id="CopyButton2" class = "copyButton">
-            <img id = "ButtonImage2"src="../images/CopyText.png" height="15" width="15" style="display: block;">
-        </button>
-    </div>
-    <script src="../scripts/Copilot_functions.js"></script>
-</div>
-<br>
-<div class="footer">
-        <p>@2024 Kanurra. All rights reserved</p>
-</div>
+<script src="../scripts/Copilot_functions.js"></script>
 </body>
 </html>
