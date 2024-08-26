@@ -133,7 +133,8 @@ body {
 .header {
     border-radius: 10px; 
     margin: 2px;
-    margin-bottom: -4px;
+    margin-bottom: -12px;
+    margin-left: 10px;
     padding: 2px;
     padding-top: 10px;
 }

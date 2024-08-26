@@ -16,6 +16,16 @@
     color: rgb(255, 255, 255);
 }
 
+.goBackButton{
+    cursor: pointer; 
+}
+
+.settingsButton{
+    margin-right: 10px;
+    cursor: pointer;
+    float: right;
+}
+
 .copyButton{
     position: absolute; 
     bottom: 2px; 
@@ -37,9 +47,8 @@
 }
 
 .dropdown{
-    width: 33%;
     display: inline-block;
-    min-width: 15em;
+    min-width: 10em;
     position: relative;
     margin: 10px;
 }
@@ -87,7 +96,7 @@
     border-radius: 0.5em;
     color: #000000;
     position:absolute;
-    top: 3em;
+    bottom: 3em;
     left: 50%;
     width: 100%;
     transform: translateX(-50%);

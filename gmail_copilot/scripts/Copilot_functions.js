@@ -30,6 +30,9 @@ dropdowns.forEach(dropdown => {
 
 document.getElementById('runButton').addEventListener('click', () => {
     const userInput = document.getElementById('inputBox').value;
+    localStorage.setItem("savedUserInput", userInput);
+
+
     document.getElementById('loadingScreen').classList.remove('hidden');
 
     fetch(apiUrl, {
@@ -55,6 +58,7 @@ document.getElementById('runButton').addEventListener('click', () => {
                 args: [final_email_subject, final_email_body]  
             });
         });
+
         localStorage.setItem('emailSubject', final_email_subject);
         localStorage.setItem('emailBody', final_email_body);
 
@@ -82,26 +86,11 @@ function injectIfNotExists(finalBody, finalSubject) {
 
     startComposeEmail(finalBody, finalSubject);
 }
-function copyText(elementId, buttonId) {
-    var textToCopy = document.getElementById(elementId).innerHTML.replace(/<br\s*\/?>/gi, '\n');
-    
-    var buttonImg = document.getElementById(buttonId);
-    buttonImg.src = "../images/CheckMark.png"; 
 
-    setTimeout(function() {
-            buttonImg.src = "../images/CopyText.png";
-        }, 1000);
-            
-    navigator.clipboard.writeText(textToCopy);
-}
-
-// First copy button
-document.getElementById('CopyButton1').addEventListener('click', () => {
-    copyText('SubjectOutput', 'ButtonImage1');
-});
-
-// Second copy button
-document.getElementById('CopyButton2').addEventListener('click', () => {
-    copyText('BodyOutput', 'ButtonImage2');
-});
-
+window.onload = function() {
+    const savedUserInput = localStorage.getItem("savedUserInput");
+    if (savedUserInput) {
+        document.getElementById('inputBox').value = savedUserInput;
+    }
+};
+ 
