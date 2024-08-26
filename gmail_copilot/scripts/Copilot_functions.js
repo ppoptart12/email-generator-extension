@@ -1,12 +1,26 @@
 const apiUrl = "https://email-generator-api-18639de3ae0d.herokuapp.com/generate_email/";
 const dropdowns = document.querySelectorAll('.dropdown');
 
+
 dropdowns.forEach(dropdown => {
     const select = dropdown.querySelector('.select');
     const caret = dropdown.querySelector('.caret');
     const menu = dropdown.querySelector('.menu');
     const options = dropdown.querySelectorAll('.menu li');
     const selected = dropdown.querySelector('.selected');
+    const dropdownId = selected.getAttribute('id'); 
+
+    const savedValue = localStorage.getItem(dropdownId);
+    if (savedValue) {
+        selected.innerText = savedValue;
+        options.forEach(option => {
+            option.classList.remove('active');
+            if (option.innerText === savedValue) {
+                option.classList.add('active');
+            }
+        });
+    }
+
     select.addEventListener('click', () =>{
         select.classList.toggle('select-clicked');
         caret.classList.toggle('caret-rotate');
@@ -24,6 +38,8 @@ dropdowns.forEach(dropdown => {
                 option.classList.remove('active');
             });
             option.classList.add('active');
+
+            localStorage.setItem(dropdownId, option.innerText);
         });
     });
 });
@@ -87,10 +103,8 @@ function injectIfNotExists(finalBody, finalSubject) {
     startComposeEmail(finalBody, finalSubject);
 }
 
-window.onload = function() {
-    const savedUserInput = localStorage.getItem("savedUserInput");
-    if (savedUserInput) {
-        document.getElementById('inputBox').value = savedUserInput;
-    }
-};
  
+const savedUserInput = localStorage.getItem("savedUserInput");
+if (savedUserInput) {
+    document.getElementById('inputBox').value = savedUserInput;
+}
