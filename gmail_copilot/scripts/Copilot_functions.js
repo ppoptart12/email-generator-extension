@@ -63,9 +63,8 @@ document.getElementById('runButton').addEventListener('click', () => {
     })    
     .then(response => response.json())
     .then(data => {
-        final_email_subject = data.email_subject.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
+        final_email_subject = data.email_subject
         final_email_body = data.email_body.replace(/\n/g, "<br>").replace(/\n\n/g, "<br>").replaceAll("^\"|\"$", "");
-
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             // Check if the content script has already been injected
             chrome.scripting.executeScript({
@@ -76,7 +75,7 @@ document.getElementById('runButton').addEventListener('click', () => {
         });
 
         localStorage.setItem('emailSubject', final_email_subject);
-        localStorage.setItem('emailBody', final_email_body);
+        localStorage.setItem('emailBody', data.email_body);
 
         window.location.href = "generated_email.html";
 

@@ -15,22 +15,16 @@
         <i class="fa-solid fa-gear icon-right settingsButton" id="settings"></i>
     </div>
     <hr class="shadowBreak">
-    <div class="outputBox">
-        <div style="position: relative; width: fit-content; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-            <p id="SubjectOutput" class= "SubjectOutputBox">Generated email subjects will appear here</p>
-            <button id="CopyButton1" class = "copyButton">
-                <img id = "ButtonImage1"src="../images/CopyText.png" height="15" width="15" style="display: block;">
-            </button>
-        </div>
+    <div class="outputBoxSubject">
+        <textarea id="SubjectOutput" class="SubjectOutputBox">Generated email subjects will appear here</textarea>
     </div>
     <hr>
     <div class="outputBox">
-        <div style="position: relative; width: fit-content; padding: 10px; border: 1px solid #ccc; background-color: #f9f9f9;">
-            <p id="BodyOutput" class= "OutputTextBox">Generated emails will appear here</p>
-            <button id="CopyButton2" class = "copyButton">
-                <img id = "ButtonImage2"src="../images/CopyText.png" height="15" width="15" style="display: block;">
-            </button>
-        </div>
+        <textarea id="BodyOutput" class="OutputTextBox">Generated emails will appear here</textarea>
+    </div>
+    <div class="buttonsContainer">
+        <button class="copyButton" id="copyButton">Copy Draft &nbsp;<i class="fa-regular fa-copy"></i></button>
+    </div>
 </div>
 <br>
 

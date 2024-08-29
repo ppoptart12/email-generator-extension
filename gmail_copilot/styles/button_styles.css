@@ -1,8 +1,10 @@
 .runButton{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(68, 159, 215);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 20px;
-    font-size: 15px;
+    font-size: 17px;
+    height: 32px;
+    margin: -10px;
     width: 100%; /* Make the button stretch the width of the dropdowns */
     color: black;
     display: inline-block;
@@ -12,8 +14,8 @@
 }
 
 .runButton:hover{
-    background-color: rgb(206, 129, 40);
-    color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .goBackButton{
@@ -27,23 +29,24 @@
 }
 
 .copyButton{
-    position: absolute; 
-    bottom: 2px; 
-    right: 7px; 
-    border: none; 
-    padding: 0; 
-    cursor: pointer; 
-    background-color: 
-    transparent;
+    background-color: rgb(68, 159, 215);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 20px;
+    font-size: 20px;
+    height: 40px;
+    color: black;
+    border: 2px solid #000000;
+    margin: 10px;
+    width: 80%;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition-duration: 0.3s;
 }
 
-#CopyButton {
-    opacity: 0.3; 
-    transition: opacity 0.3s ease-in-out; 
-}
-
-#CopyButton:hover {
-    opacity: 1; 
+.copyButton:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .dropdown{

@@ -19,17 +19,11 @@ body {
     padding: 0px;
 }
 
-.inputContainer{
-    flex-grow: 0.7;
-    display: flex;
-    flex-direction: column;
-}
-
 .shadowBreak{
     color: rgb(0, 0, 0);
     height: 5px;
     border: 0;
-    box-shadow: 0 10px 10px -10px #333 inset;
+    box-shadow: 0 8px 10px -10px #333 inset;
     margin: 20px 0; /* Optional: Add margin to give some spacing */
   }
 
@@ -38,13 +32,21 @@ body {
     font-weight: normal;
     font-size: 20px;
     margin-top: -4px;
+    margin-left: 10px;
+}
+
+.inputContainer{
+    flex-grow: 0.95;
+    display: flex;
+    flex-direction: column;
 }
 
 .inputBox {
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 20px;
     padding: 10px;
-    margin-right: 7px;
+    margin-right: 14px;
+    margin-left: 10px;
     border: 2px solid rgb(0, 0, 0);
     flex-grow: 1;
     resize: none; /* Prevent manual resizing */
@@ -53,18 +55,11 @@ body {
 }
 
 .buttonsContainer{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px;
+    margin-top: auto;    
     background-color: #f1f1f1;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .dropdowns{
@@ -80,54 +75,47 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px; /* Add space between dropdowns and button */
+    gap: 7px; /* Add space between dropdowns and button */
+}
+
+.outputBoxSubject{
+    display: flex; 
+    justify-content: center; 
 }
 
 .outputBox{
     display: flex; 
     justify-content: center; 
-    align-items: center; 
-    margin: 3;
+    flex-grow: 1;
+    margin-bottom: 15px;
 }
+
 
 .SubjectOutputBox{
-    text-align: left; 
-    margin: 0; 
-    padding-right: 15px;
-    font-size: 12px;
-    overflow-y: auto;
-    max-height: 70px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    position: relative; 
+    width: 80%; 
+    border: 1px solid #ccc; 
+    border-radius: 25px;
+    resize: none; /* Prevent manual resizing */
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #f9f9f9;
 }
+
 
 .OutputTextBox{
-    text-align: left; 
-    margin: 0; 
-    padding-right: 15px;
-    font-size: 12px;
-    overflow-y: auto;
-    max-height: 110px;
-}
-
-.exampleImage{
-    position: absolute;
-    margin: 0;
-    top: 60px;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    height: 300px;
-    width: 400px;
-}
-
-.exampleImageTab{
-    position: absolute;
-    margin: 0;
-    top: 250px;
-    bottom: 0px;
-    left: 22px;
-    right: 0px;
-    height: 160px;
-    width: 320px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative; 
+    width: fit-content; 
+    width: 80%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 25px;
+    resize: none; /* Prevent manual resizing */
+    box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
 .header {
