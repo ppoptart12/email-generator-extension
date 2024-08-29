@@ -48,7 +48,6 @@ document.getElementById('runButton').addEventListener('click', () => {
     const userInput = document.getElementById('inputBox').value;
     localStorage.setItem("savedUserInput", userInput);
 
-
     document.getElementById('loadingScreen').classList.remove('hidden');
 
     fetch(apiUrl, {

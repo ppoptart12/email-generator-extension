@@ -47,6 +47,5 @@ function startComposeEmail(subjectText, bodyText) {
 }
 
 function insertHTMLIntoBody(emailBody, htmlText) {
-    // Insert HTML directly, preserving the formatting with <br> tags
     emailBody.innerHTML = htmlText;
 }

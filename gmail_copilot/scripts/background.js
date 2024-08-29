@@ -1,9 +1,7 @@
-// Allows users to open the side panel by clicking on the action toolbar icon
 chrome.sidePanel
   .setPanelBehavior({ openPanelOnActionClick: true })
   .catch((error) => console.error(error));
 
-// Function to inject content script
 function injectContentScript(tabId) {
   chrome.scripting.executeScript({
       target: { tabId: tabId },
@@ -29,8 +27,6 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
       }
   });
 
-
-// Listen to tab activation to ensure the content script is injected
 chrome.tabs.onActivated.addListener(activeInfo => {
   chrome.tabs.get(activeInfo.tabId, tab => {
       if (tab.url && tab.url.includes('https://mail.google.com/')) {
@@ -42,7 +38,6 @@ chrome.tabs.onActivated.addListener(activeInfo => {
     });
 });
 
-// Listen for window focus changes
 chrome.windows.onFocusChanged.addListener(windowId => {
   if (windowId !== chrome.windows.WINDOW_ID_NONE) {
       chrome.tabs.query({ active: true, windowId: windowId }, tabs => {
