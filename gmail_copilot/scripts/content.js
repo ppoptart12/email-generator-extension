@@ -31,6 +31,7 @@ function startComposeEmail(subjectText, bodyText) {
                     const emailBody = latestDraft.querySelector('div[aria-label="Message Body"]');
                     if (emailBody) {
                         emailBody.focus();
+                        bodyText = bodyText.trimStart();
                         insertHTMLIntoBody(emailBody, bodyText);
                     } else {
                         console.log("Email body not found!");
@@ -47,5 +48,5 @@ function startComposeEmail(subjectText, bodyText) {
 
 function insertHTMLIntoBody(emailBody, htmlText) {
     // Insert HTML directly, preserving the formatting with <br> tags
-    emailBody.innerHTML += htmlText;
+    emailBody.innerHTML = htmlText;
 }

@@ -1,7 +1,7 @@
 .runButton{
     background-color: rgb(68, 159, 215);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 17px;
     height: 32px;
     margin: -10px;
@@ -32,7 +32,7 @@
     background-color: rgb(68, 159, 215);
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 18px;
     height: 40px;
     color: black;
     border: 2px solid #000000;
@@ -51,7 +51,7 @@
 
 .dropdown{
     display: inline-block;
-    min-width: 10em;
+    min-width: 12em;
     position: relative;
     margin: 10px;
 }
