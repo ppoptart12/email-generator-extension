@@ -1,0 +1,69 @@
+body{
+    background-color:rgb(211, 231, 233); 
+    text-align:Center;
+}
+
+.header {
+    border-radius: 10px; 
+    margin: 5px;
+    padding: 2px;
+}
+
+.header .image {
+    background: url("../images/icons/Logoicon.png") no-repeat;
+    width: 27px;
+    height: 27px;
+}
+
+.header .text {
+    font: x-large sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    text-align:right;
+}
+
+.header .image, 
+.header .text {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.notGmailMessage{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    font-weight:500;
+}
+
+.exampleImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    margin-top: -10%;
+    margin-bottom: -15%; /* Reduce this value to bring the images closer */
+    height: auto;
+}
+
+.exampleImageTab{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    height: auto;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 10px;
+    padding: 0px 0px 25px 20px ;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
