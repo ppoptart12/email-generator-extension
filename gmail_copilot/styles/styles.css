@@ -1,75 +1,130 @@
-body{
-    background-color:rgb(211, 231, 233); 
-    text-align:left;
+html, body {
+    margin: 0;
+    margin-left: 2px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
+body {
+    text-align:left;
+    background-image: linear-gradient(white, rgb(194, 230, 233));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 0px;
+}
+
+.shadowBreak{
+    color: rgb(0, 0, 0);
+    height: 5px;
+    border: 0;
+    box-shadow: 0 8px 10px -10px #333 inset;
+    margin: 20px 0; /* Optional: Add margin to give some spacing */
+  }
 
 .prompt {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: normal;
     font-size: 20px;
+    margin-top: -4px;
+    margin-left: 10px;
+}
+
+.inputContainer{
+    flex-grow: 0.95;
+    display: flex;
+    flex-direction: column;
 }
 
 .inputBox {
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
     padding: 10px;
-    height: 180px;
-    width: 97%;
-    margin-left: auto;
-    margin-right: auto;
-    border: 3px solid rgb(0, 0, 0);
+    margin-right: 14px;
+    margin-left: 10px;
+    border: 2px solid rgb(0, 0, 0);
+    flex-grow: 1;
+    resize: none; /* Prevent manual resizing */
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.buttonsContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;    
+    background-color: #f1f1f1;
+}
+
+.dropdowns{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0px; /* Space between dropdowns and the button */
+    width: 100%;
+    max-width: 600px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px; /* Add space between dropdowns and button */
+}
+
+.outputBoxSubject{
+    display: flex; 
+    justify-content: center; 
 }
 
 .outputBox{
     display: flex; 
     justify-content: center; 
-    align-items: center; 
-    margin: 3;
+    flex-grow: 1;
+    margin-bottom: 15px;
 }
+
 
 .SubjectOutputBox{
-    text-align: left; 
-    margin: 0; 
-    padding-right: 15px;
-    font-size: 12px;
-    overflow-y: auto;
-    max-height: 170px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    position: relative; 
+    width: 80%; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    resize: none; /* Prevent manual resizing */
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #f9f9f9;
 }
+
 
 .OutputTextBox{
-    text-align: left; 
-    margin: 0; 
-    padding-right: 15px;
-    font-size: 12px;
-    overflow-y: auto;
-    max-height: 130px;
-}
-
-.exampleImage{
-    position: absolute;
-    margin: 0;
-    top: 60px;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    height: 300px;
-    width: 400px;
-}
-
-.exampleImageTab{
-    position: absolute;
-    margin: 0;
-    top: 250px;
-    bottom: 0px;
-    left: 22px;
-    right: 0px;
-    height: 160px;
-    width: 320px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: relative; 
+    width: fit-content; 
+    width: 80%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px;
+    resize: none; /* Prevent manual resizing */
+    box-sizing: border-box;
+    background-color: #f9f9f9;
 }
 
 .header {
     border-radius: 10px; 
-    margin: 5px;
+    margin: 2px;
+    margin-bottom: -12px;
+    margin-left: 10px;
     padding: 2px;
+    padding-top: 10px;
 }
 
 .header .image {
@@ -91,17 +146,3 @@ body{
     vertical-align: bottom;
 }
 
-.footer {
-    background-color: black;
-    color: white;
-    width: 100%;
-    height: 10px;
-    padding: 0px 0px 25px 20px ;
-    text-align: left;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    font-family: "M PLUS 1p", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
