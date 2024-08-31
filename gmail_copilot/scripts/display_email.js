@@ -27,4 +27,3 @@ document.getElementById('return').addEventListener('click', () =>{
 document.getElementById('settings').addEventListener('click', () =>{
     
 });
-document.getElementById('inputBox').value = localStorage.getItem("savedUserInput", userInput);
