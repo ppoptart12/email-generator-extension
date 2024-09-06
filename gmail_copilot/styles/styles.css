@@ -1,0 +1,107 @@
+body{
+    background-color:rgb(211, 231, 233); 
+    text-align:left;
+}
+
+.prompt {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.inputBox {
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 10px;
+    height: 180px;
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid rgb(0, 0, 0);
+}
+
+.outputBox{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 3;
+}
+
+.SubjectOutputBox{
+    text-align: left; 
+    margin: 0; 
+    padding-right: 15px;
+    font-size: 12px;
+    overflow-y: auto;
+    max-height: 170px;
+}
+
+.OutputTextBox{
+    text-align: left; 
+    margin: 0; 
+    padding-right: 15px;
+    font-size: 12px;
+    overflow-y: auto;
+    max-height: 130px;
+}
+
+.exampleImage{
+    position: absolute;
+    margin: 0;
+    top: 60px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 300px;
+    width: 400px;
+}
+
+.exampleImageTab{
+    position: absolute;
+    margin: 0;
+    top: 250px;
+    bottom: 0px;
+    left: 22px;
+    right: 0px;
+    height: 160px;
+    width: 320px;
+}
+
+.header {
+    border-radius: 10px; 
+    margin: 5px;
+    padding: 2px;
+}
+
+.header .image {
+    background: url("../images/icons/Logoicon.png") no-repeat;
+    width: 27px;
+    height: 27px;
+}
+
+.header .text {
+    font: x-large sans-serif;
+    font-weight: bold;
+    font-size: 19px;
+    text-align:right;
+}
+
+.header .image, 
+.header .text {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 10px;
+    padding: 0px 0px 25px 20px ;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
